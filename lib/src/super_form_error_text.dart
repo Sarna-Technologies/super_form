@@ -71,9 +71,9 @@ class SuperFormErrorText extends StatelessWidget {
   /// the specified font size.
   ///
   /// The value given to the constructor as textScaleFactor. If null, will
-  /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
+  /// use the [MediaQueryData.textScaler] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final TextScaler? textScaler;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -119,7 +119,7 @@ class SuperFormErrorText extends StatelessWidget {
     this.locale,
     this.softWrap,
     this.overflow,
-    this.textScaleFactor,
+    this.textScaler,
     this.maxLines,
     this.semanticsLabel,
     this.textWidthBasis,
@@ -142,7 +142,7 @@ class SuperFormErrorText extends StatelessWidget {
     TextStyle? effectiveTextStyle = style;
     if (style == null || style!.inherit) {
       effectiveTextStyle = defaultTextStyle.style
-          .merge(TextStyle(color: theme.errorColor))
+          .merge(TextStyle(color: theme.colorScheme.error))
           .merge(style);
     }
 
@@ -154,7 +154,7 @@ class SuperFormErrorText extends StatelessWidget {
       textDirection: textDirection,
       locale: locale,
       overflow: overflow,
-      textScaleFactor: textScaleFactor,
+      textScaler: textScaler,
       maxLines: maxLines,
       semanticsLabel: semanticsLabel,
       textWidthBasis: textWidthBasis,
