@@ -105,6 +105,11 @@ class TextSuperFormField extends SuperFormField {
                   errorText: fieldData.errors.first.message);
             }
 
+            effectiveDecoration.copyWith(
+              contentPadding: EdgeInsets.all(biggerGapSize),
+              isDense: true,
+            );
+
             VoidCallback? effectiveOnEditingComplete = onEditingComplete;
             if (fieldData != null &&
                 formState.validationMode == ValidationMode.onBlur) {
