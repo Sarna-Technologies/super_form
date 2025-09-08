@@ -106,7 +106,7 @@ class TextSuperFormField extends SuperFormField {
             }
 
             effectiveDecoration.copyWith(
-              contentPadding: EdgeInsets.all(biggerGapSize),
+              contentPadding: EdgeInsets.all(12),
               isDense: true,
             );
 
