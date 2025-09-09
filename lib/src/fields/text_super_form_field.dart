@@ -105,7 +105,7 @@ class TextSuperFormField extends SuperFormField {
                   errorText: fieldData.errors.first.message);
             }
 
-            effectiveDecoration.copyWith(
+            effectiveDecoration = effectiveDecoration.copyWith(
               contentPadding: EdgeInsets.all(12),
               isDense: true,
             );
